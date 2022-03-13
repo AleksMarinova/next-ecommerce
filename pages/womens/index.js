@@ -7,7 +7,9 @@ const Womens=({data})=> {
       {data && data.map((item, index) => (
         <div key={index}>
           <p>{item.id}</p>
-          <h1>{item.title}</h1>
+          <Link href={`/womens/${item.id}`} >
+          <a>{item.title}</a>
+          </Link>
           <Image src={item.image} alt={item.title} width={300} height={300} />
           <p>{item.description}</p>
           <p>${item.price}</p>
