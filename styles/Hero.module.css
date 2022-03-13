@@ -1,0 +1,18 @@
+.container {
+ height: 90vh;
+}
+
+.image {
+  background: url("../public/hero.png") no-repeat center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .image {
+    background-size: cover;
+    height: 100%;
+  }
+}
+  
