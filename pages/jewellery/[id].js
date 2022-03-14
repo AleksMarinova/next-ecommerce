@@ -5,7 +5,7 @@ import useStore from '../../zustand/store';
 const Item = ({data}) => {
   const router = useRouter();
   const { id } = router.query;
-  const addToCart = useStore(state => state.increment);
+  // const addToCart = useStore(state => state.increment);
 
   return (
     <div>
@@ -13,11 +13,11 @@ const Item = ({data}) => {
       <p>{data.title}</p>
       <Image src={data.image} alt={data.title} width={300} height={300} />
       <p>{data.description}</p>
-      <button onClick={(e)=> {
+      {/* <button onClick={(e)=> {
         e.preventDefault();
         e.stopPropagation();
-        addToCart();
-      }} >Add to cart</button>
+        addToCart(data);
+      }} >Add to cart</button> */}
     </div>
   );
 }

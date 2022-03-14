@@ -5,7 +5,7 @@ import { FaOpencart } from 'react-icons/fa';
 import useStore from '../zustand/store';
 
 export default function Navbar() {
-  const itemsInCart = useStore(state => state.count);
+  const itemsInCart = useStore(state => state.cartItems.length);
 
   return (
     <div className={styles.navbar}>
