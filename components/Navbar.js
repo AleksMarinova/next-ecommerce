@@ -2,9 +2,10 @@ import styles from '../styles/Navbar.module.css';
 import Link  from 'next/link';
 import { useState } from 'react'
 import { FaOpencart } from 'react-icons/fa';
+import useStore from '../zustand/store';
 
 export default function Navbar() {
-  const [countItemsInCart, setCountItemsInCart] = useState(0);
+  const itemsInCart = useStore(state => state.count);
 
   return (
     <div className={styles.navbar}>
@@ -16,7 +17,7 @@ export default function Navbar() {
       <Link href='/womens' ><a>women`s clothing</a></Link>
       <Link href='/cart' ><a>
        <div className={styles.cart_container} >
-       <div className={styles.counter}>{countItemsInCart}</div>
+       <div className={styles.counter}>{itemsInCart}</div>
           <FaOpencart/>
        </div>
         </a></Link> 
