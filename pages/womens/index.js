@@ -1,9 +1,11 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import ProductCard from '../../components/ProductCard'
+import styles from '../../styles/ProductList.module.css'
+
 const Womens=({data})=> {
   return (
-    <div>
+    <div className={styles.container}>
       {data && data.map((item, index) => (
         <ProductCard key={item.id} item={item} />
       ))}
