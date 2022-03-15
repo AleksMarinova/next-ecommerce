@@ -2,7 +2,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 1.5rem;
+  padding-bottom:4rem;
   border-bottom: 1px solid #e5e5e5;
+  margin-top: 2rem;
 }
 
 .navbar a:first-child {

@@ -1,6 +1,5 @@
 import styles from '../styles/Navbar.module.css';
 import Link  from 'next/link';
-import { useState } from 'react'
 import { FaOpencart } from 'react-icons/fa';
 import useStore from '../zustand/store';
 
