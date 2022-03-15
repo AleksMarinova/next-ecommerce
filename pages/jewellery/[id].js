@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
 import useStore from '../../zustand/store';
+import { motion } from "framer-motion";
 
 const Item = ({data}) => {
   const router = useRouter();
@@ -11,7 +12,12 @@ const Item = ({data}) => {
     <div>
       <h1>{id}</h1>
       <p>{data.title}</p>
-      <Image src={data.image} alt={data.title} width={300} height={300} />
+      <motion.div
+      layoutId={data.id}
+      >
+         <Image src={data.image} alt={data.title} width={300} height={300} />
+        </motion.div>
+     
       <p>{data.description}</p>
       <button onClick={(e)=> {
         e.preventDefault();
