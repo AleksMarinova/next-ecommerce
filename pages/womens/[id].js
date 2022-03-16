@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import useStore from "../../zustand/store";
 import { motion } from 'framer-motion'
+import styles from '../../styles/ProductPage.module.css';
 
 const Item = ({data}) => {
   const router = useRouter();
@@ -15,15 +16,18 @@ const Item = ({data}) => {
   }
 
   return (
-    <div>
-      <h1>{id}</h1>
-      <p>{data.title}</p>
-      <motion.div layoutId={data.id} >
+    <div className={styles.container} >
+     <div className={styles.card} >
+     <motion.div layoutId={data.id} >
       <Image src={data.image} alt={data.title} width={300} height={300} />
       </motion.div>
-      
+      <div className={styles.info}>
+      <h1>{data.title}</h1>
       <p>{data.description}</p>
       <button onClick={(e)=>handleAddToCart(e)} >Add to cart</button>
+       </div>
+      
+      </div>
     </div>
   );
 }

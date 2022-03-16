@@ -1,11 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import {useRouter} from "next/router";
+import useStore from "../zustand/store";
 import styles from "../styles/ProductListCard.module.css"
 import { motion } from "framer-motion";
 
 const ProductCard = ({ item }) => {
   const router = useRouter();
+  const addToCart = useStore(state => state.addToCart);
   
   return (
     <motion.div 
@@ -27,6 +29,12 @@ const ProductCard = ({ item }) => {
         
       </Link>
       <p>${item.price}</p>
+      <button className={styles.button} onClick={(e)=>{
+        e.stopPropagation()
+        e.preventDefault()
+        addToCart(item)
+      }
+        } >Add to cart</button>
     </motion.div>
   );
 };

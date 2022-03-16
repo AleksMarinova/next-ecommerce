@@ -27,3 +27,16 @@
   }
 }
 
+.button {
+  width: 50%;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  background-color: #E49BC7;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
