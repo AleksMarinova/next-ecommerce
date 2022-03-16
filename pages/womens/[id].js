@@ -24,6 +24,7 @@ const Item = ({data}) => {
       <div className={styles.info}>
       <h1>{data.title}</h1>
       <p>{data.description}</p>
+      <p>${data.price}</p>
       <button onClick={(e)=>handleAddToCart(e)} >Add to cart</button>
        </div>
       
